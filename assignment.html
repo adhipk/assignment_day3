@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		div{
+			background:url("download.png")  no-repeat;
+			width:200px;
+			height:200px;
+			border:1px solid black;
+			display: block;
+		}
+	</style>
+	<title></title>
+</head>
+<body>
+<div id="play">
+</div>
+<script type="text/javascript">
+
+	var player=document.getElementById("play");
+	document.addEventListener("keyup",move);
+	var xpos=100;
+	var ypos=100;
+	var permove=100;
+	var rotateflag=false;//required because pressing r twice breaks the code
+	var angle=0;
+	var interval;
+	player.style='transform:translate('+xpos+' px ,'+ypos+'px);transform:rotate('+angle+'deg);';
+	function move(){
+		var k=event.key;
+		if(k=="ArrowRight"){
+			xpos+=permove;
+		}
+		if(k=="ArrowLeft"){
+			xpos-=permove;
+		}
+		if(k=="ArrowUp"){
+			ypos-=permove;
+		}
+		if(k=="ArrowDown"){
+			ypos+=permove;
+		}
+		if(k=='r' && rotateflag==false){
+			interval=setInterval(function(){
+				angle++;
+				player.style='transform:translate('+xpos+'px,'+ypos+'px) rotate('+angle+'deg);\n';
+			},3);
+			rotateflag=true;
+		}
+		if(k=='s'){
+			clearInterval(interval);
+			player.style='transform:translate('+xpos+'px,'+ypos+'px) rotate('+angle+'deg);\n';
+			rotateflag=false;
+		}
+		player.style='transform:translate('+xpos+'px,'+ypos+'px) rotate('+angle+'deg);\n';
+
+	}
+
+	
+		
+
+</script>
+</body>
+
+</html>
