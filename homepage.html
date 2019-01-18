@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../../../favicon.ico">
+
+  <title>Starter Template for Bootstrap</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/carousel.css"rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/starter-template.css" rel="stylesheet">
+</head>
+
+<body style="background-color: ">
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto col">
+        <li class="nav-item active">
+          <a class="nav-link"id="home-btn" onclick="show(this)" >Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="product-btn" onclick="show(this)">About Us<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="about-btn" onclick="show(this)">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="contact-btn" onclick="show(this)">Contact</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="#">ActionService</a>
+            <a class="dropdown-item" href="#">ActionService-Pro</a>
+            <a class="dropdown-item" href="#">SomethingElseService</a>
+          </div>
+        </li>
+      </ul>
+      <div class="col">
+        <a class="navbar-brand" href="#">Company Name</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"  aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <span class="navbar-text">
+        <button class="btn btn-primary">Login</button>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Sign Up</button>
+      </span>
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Company Name</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form class="form-signin">
+              <h1 class="h3 mb-3 font-weight-normal">Sign up</h1>
+              <div class="container">
+                <input type="email" id="inputEmail" class="mx-auto form-control" placeholder="Email" required autofocus>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <div class="checkbox mb-3">
+                  <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                  </label>
+                </div>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+
+            </form>
+            <div class="modal-body">
+              <p></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main role="main" class="container">
+
+    <div class="starter-template active" id="home">
+      <h1>Welcome to Company Name</h1>
+      <p class="lead">We are the best at what we do<br>We do what we're best at</p>
+    </div>
+
+    <div class="starter-template" id="about" style="display:none">
+      <h1>Who are we?</h1>
+      <p class="lead">We are Company name<br>We do what we're best at</p>
+    </div>
+    <div class="starter-template" id="product" style="display:none">
+      <h1>What do we do?</h1>
+      <p class="lead">We make products<br>We provide services</p>
+    </div>
+    <div class="starter-template" id="contact" style="display:none">
+      <h1>How do you talk to us?</h1>
+      <p class="lead">contact us at aboutus@company.com<br>Or  call us at 99999999</p>
+    </div>
+  </main><!-- /.container -->
+  <!-- Bootstrap core JavaScript================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+   var vardiv=document.querySelectorAll("main div");
+   var varbtn=document.querySelectorAll("[id$=-btn");
+   function show(d)
+   {
+    var i=0;
+    var flag=false;
+    console.log(d.id);
+    console.log(varbtn.length);
+    while(i<varbtn.length||flag==false){
+      console.log(varbtn[i].id);
+      if(d.id==varbtn[i].id){
+        flag=true;
+        console.log("true");
+        break;
+      }
+      i++;
+    }
+    console.log(i);
+    for(var j=0;j<vardiv.length;j++)
+    {
+      vardiv[j].style="display:none;";
+    }
+    vardiv[i].style="display:block;";
+  }
+  </script>
+</body>
+</html>
